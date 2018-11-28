@@ -64,12 +64,13 @@ public class MinesweeperBoard2D{
             for(int columnC = 0; columnC < columns; columnC++){
                 if(!board[rowC][columnC].isBomb()){
                     //Checking right and left
-                    if(columnC%columns !=(columns -1)){
+                    System.out.print(rowC); System.out.print(columnC); System.out.println();
+                    if(columnC < columns-1){
                         if(board[rowC][columnC+1].isBomb()){
                             board[rowC][columnC].addNum();
                         }
                     }
-                    if(columnC%columns != 0){
+                    if(columnC > 0){
                         if(board[rowC][columnC-1].isBomb()){
                             board[rowC][columnC].addNum();
                         }
@@ -81,14 +82,14 @@ public class MinesweeperBoard2D{
                             board[rowC][columnC].addNum();
                         }
 
-                        if(columnC%columns !=(columns -1)){
+                        if(columnC < columns-1){
                             //checks bottom right
                             if(board[rowC+1][columnC+1].isBomb()){
                                 board[rowC][columnC].addNum();
                             }
                         }
 
-                        if(columnC%columns != 0){
+                        if(columnC > 0){
                             //checks bottom left
                             if(board[rowC+1][columnC-1].isBomb()){
                                 board[rowC][columnC].addNum();
@@ -103,13 +104,13 @@ public class MinesweeperBoard2D{
                         }
 
                         //checks top left
-                        if(columnC%columns != 0){
+                        if(columnC > 0){
                             if(board[rowC-1][columnC-1].isBomb()){
                                 board[rowC][columnC].addNum();
                             }
                         }
                         //checks top right
-                        if(columnC%columns !=(columns -1)){
+                        if(columnC < columns-1){
                             if(board[rowC-1][columnC+1].isBomb()){
                                 board[rowC][columnC].addNum();
                             }
