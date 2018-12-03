@@ -43,6 +43,9 @@ public class Cell implements ActionListener{
     }
 
     //Additional Methods may be required. Please make them yourself.
+    int getValue(){
+        return value;
+    }
     public void addNum(){
         value++;
     }

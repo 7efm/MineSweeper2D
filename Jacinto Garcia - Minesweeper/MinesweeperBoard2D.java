@@ -3,7 +3,7 @@
  * Write a description of class Minesweeper here.
  * 
  * @author (Jacinto Garcia) 
- * @version (11.26.18)
+ * @version (11.28.18)
  */
 import java.lang.Math;
 import javax.swing.*;
@@ -64,7 +64,6 @@ public class MinesweeperBoard2D{
             for(int columnC = 0; columnC < columns; columnC++){
                 if(!board[rowC][columnC].isBomb()){
                     //Checking right and left
-                    System.out.print(rowC); System.out.print(columnC); System.out.println();
                     if(columnC < columns-1){
                         if(board[rowC][columnC+1].isBomb()){
                             board[rowC][columnC].addNum();
@@ -132,12 +131,12 @@ public class MinesweeperBoard2D{
                     System.out.print("X"); System.out.print(" ");
                 }
                 else{
-                    System.out.print("O"); System.out.print(" ");
+                    System.out.print(board[rowC][columnC].getValue()); System.out.print(" ");
                 }
             }
             System.out.println("");
         }
-    }
+        }
 
     public JPanel addCells(){
         JPanel panel = new JPanel(new GridLayout(rows,columns));
